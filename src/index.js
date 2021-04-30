@@ -46,3 +46,40 @@ bot.onText(/\/help/, (msg) => {
 
 });
 
+bot.on('message', (msg) => {
+
+  if (msg.text.toString().toLowerCase().indexOf("dica") === 0) {
+    const msg_dica = msg.text;
+
+    bot.sendMessage(msg.chat.id, "Obrigado pela dica");
+    bot.sendMessage(process.env.ID_BOT, `ID - retorno para ${msg.from.first_name}: ${msg.chat.id} \n${msg_dica}`);
+  }
+});
+
+bot.onText(/\/fonte/, (msg) => {
+
+  bot.sendMessage(msg.chat.id,`
+    *FONTE*
+    \nEu obtenho minhas informações da seguinte API\nhttps://corona.dnsforfamily.com/api.txt
+    \n*CÓDIGO*
+    \nVocê pode ver meu código fonte aqui.\nhttps://github.com/jefte199/
+    \n*MELHORIAS*
+    \nVocê pode me enviar sugestões de melhorias da seguinte maneira.\nescreva "dica" e depois uma dica
+    \n*EXEMPLO*
+    \ndica Queria que tivesse o Sri Lanka nas opções de país.
+    \nSua dica vai ser muito bem recebida.
+    `,style_font);  
+
+});
+
+// Secret Route
+
+bot.on('message', (msg) => {
+
+  if (msg.text.toString().toLowerCase().indexOf("retorno") === 0) {
+    const [, msg_retorno] = msg.text.split('retorno');
+    const [msg_re, msg_id] =  msg_retorno.split('id');
+    bot.sendMessage(msg.chat.id, "Mensagem enviada");
+    bot.sendMessage(msg_id, `${msg_re}`);
+  }
+});
