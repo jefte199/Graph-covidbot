@@ -4,6 +4,16 @@ require('dotenv').config()
 //import libs
 const Telegram_bot = require("node-telegram-bot-api");
 
+//function API
+function graph_covid(initials){
+  const obj_graph_img_img = {
+    URL: "https://corona.dnsforfamily.com/graph.png?c="+initials+"&time=whatever",
+    MSG: `Vermelho - Mortes por dia\nAmarelo - Infectados por dia\nBranco(linha pontilhada) - Recuperados
+    \nInformação em tempo Real`
+  };
+  return obj_graph_img_img;
+}
+
 // BOT
 const token_secret = process.env.TOKEN_BOT;
 
@@ -17,7 +27,7 @@ const style_font = {
 bot.onText(/\/start/, (msg) => {
 
   bot.sendMessage(msg.chat.id, 
-    `Olá ${msg.from.first_name}, bem vindo ao graphic covid\n/help para saber como me usar`);
+    `Olá ${msg.from.first_name}, bem vindo ao graph covid\n/help para saber como me usar`);
 
 });
 
@@ -30,8 +40,9 @@ bot.onText(/\/help/, (msg) => {
     \n*BRASIL*
     \n/brasil *-* para informações de todo o Brasil
     \n*MUNDO*
-    \nTenho informações somente de forma geral\n/israel\n/eua *-* Estados Unidos\n/italia\n/china
-    \nOutros paises embreve`,
-    style_font);
+    \n/israel\n/espanha\n/italia\n/china\n/islandia
+    \nOutros paises embreve
+    `,style_font);
 
 });
+
