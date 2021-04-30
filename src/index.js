@@ -9,3 +9,8 @@ const token_secret = process.env.TOKEN_BOT;
 
 const bot = new Telegram_bot(token_secret, { polling: true });
 
+// Style font
+const style_font = {
+  parse_mode: 'Markdown'
+};
+
