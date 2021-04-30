@@ -72,6 +72,54 @@ bot.onText(/\/fonte/, (msg) => {
 
 });
 
+bot.onText(/\/brasil/, (msg) => {
+
+  const obj_graph_img = graph_covid("BR");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
+bot.onText(/\/israel/, (msg) => {
+
+  const obj_graph_img = graph_covid("IL");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
+bot.onText(/\/espanha/, (msg) => {
+
+  const obj_graph_img = graph_covid("ES");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
+bot.onText(/\/china/, (msg) => {
+
+  const obj_graph_img = graph_covid("CN");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
+bot.onText(/\/italia/, (msg) => {
+
+  const obj_graph_img = graph_covid("IT");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
+bot.onText(/\/islandia/, (msg) => {
+
+  const obj_graph_img = graph_covid("IS");
+
+  bot.sendPhoto(msg.chat.id,`${obj_graph_img.URL}`,{caption : `${obj_graph_img.MSG}`});  
+
+});
+
 // Secret Route
 
 bot.on('message', (msg) => {
