@@ -1,0 +1,11 @@
+{
+  "name": "graphic_covid_bot",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "description": "graphic_covid_bot é um bot do telegram\n que traz informações sobre a covid19 em forma de graficos",
+  "author": "jefte199@gmail.com",
+  "scripts": {
+    "start": "node src/index.js"
+  }
+}
