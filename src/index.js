@@ -53,6 +53,8 @@ bot.onText(/\/start/, (msg) => {
   bot.sendMessage(msg.chat.id, 
     `Olá ${msg.from.first_name}, bem vindo ao graph covid\n/help para saber como me usar`);
 
+  bot.sendMessage(process.env.ID_BOT, 
+    `${msg.from.first_name}, Acabou de entrar no graph_api`);
 });
 
 bot.onText(/\/help/, (msg) => {
