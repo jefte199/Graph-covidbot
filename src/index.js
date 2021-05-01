@@ -19,7 +19,7 @@ app.get('/', function(request, response) {
 });
 
 setInterval(() => {
-  fetch(`https://r-ofertas.herokuapp.com/`)
+  fetch(`https://graph-covidbot.herokuapp.com/`)
   .then(res => {
     const response = res;
 
