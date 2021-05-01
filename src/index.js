@@ -86,7 +86,7 @@ bot.onText(/\/fonte/, (msg) => {
     *FONTE*
     \nEu obtenho minhas informações da seguinte API\nhttps://corona.dnsforfamily.com/api.txt
     \n*CÓDIGO*
-    \nVocê pode ver meu código fonte aqui.\nhttps://github.com/jefte199/
+    \nVocê pode ver meu código fonte aqui.\nhttps://github.com/jefte199/Graph-covidbot
     \n*MELHORIAS*
     \nVocê pode me enviar sugestões de melhorias da seguinte maneira.\nescreva "dica" e depois uma dica
     \n*EXEMPLO*
