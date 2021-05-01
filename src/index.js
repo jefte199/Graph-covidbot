@@ -3,6 +3,30 @@ require('dotenv').config()
 
 //import libs
 const Telegram_bot = require("node-telegram-bot-api");
+const express = require("express");
+const fetch = require("node-fetch");
+
+//For deploy in Heroku
+const app = express();
+
+app.set('port', (process.env.PORT || 3333));
+
+app.get('/', function(request, response) {
+  const result = 'App is running'
+  response.send(result);
+}).listen(app.get('port'), function() {0
+  console.log('App is running, server is listening on port ', app.get('port'));
+});
+
+setInterval(() => {
+  fetch(`https://r-ofertas.herokuapp.com/`)
+  .then(res => {
+    const response = res;
+
+    bot.sendMessage(process.env.ID_BOT, `APP STATUS: ${response.status}`);  
+  });
+}, process.env.TIME_INTERVAL);
+
 
 //function API
 function graph_covid(initials){
@@ -14,15 +38,15 @@ function graph_covid(initials){
   return obj_graph_img_img;
 }
 
+// Style font BOT
+const style_font = {
+  parse_mode: 'Markdown'
+};
+
 // BOT
 const token_secret = process.env.TOKEN_BOT;
 
 const bot = new Telegram_bot(token_secret, { polling: true });
-
-// Style font
-const style_font = {
-  parse_mode: 'Markdown'
-};
 
 bot.onText(/\/start/, (msg) => {
 
