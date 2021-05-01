@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
-  "description": "graphic_covid_bot é um bot do telegram\n que traz informações sobre a covid19 em forma de graficos",
+  "description": "graphic_covid_bot é um bot do telegram que traz informações sobre a covid19 em forma de graficos",
   "author": "jefte199@gmail.com",
   "scripts": {
     "start": "node src/index.js"
   },
   "dependencies": {
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
     "node-telegram-bot-api": "^0.53.0"
   }
 }
